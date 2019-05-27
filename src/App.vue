@@ -70,10 +70,10 @@ export default {
                 }
             });
       },
-      make(n) {
+      make(n, fileid) {
         this.$axios.post(restbase() + `pathology/${n}/make`, {}, {responseType:'blob'})
             .then(response => {
-                fileDownload(response.data, n + ".docx");
+                fileDownload(response.data, fileid + '_' + n + ".docx");
             })
             .catch(error => {
                 if (error) {

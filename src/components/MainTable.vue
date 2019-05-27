@@ -14,7 +14,7 @@
       <td class="text-xs-left">{{ props.item.BGTXT }}</td>
       <td class="text-xs-left">{{ props.item.ZDJL }}</td>
       <td class="text-xs-center">
-        <v-icon @click="gen(props.item.PatientID)">edit</v-icon>
+        <v-icon @click="gen(props.item.DJH1, props.item.PatientID)">edit</v-icon>
       </td>
     </template>
   </v-data-table>
@@ -29,8 +29,8 @@
       }
     },
     methods: {
-      gen(n) {
-        this.$emit('generate', n);
+      gen(n, pid) {
+        this.$emit('generate', n, pid);
       }
     },
     data () {
